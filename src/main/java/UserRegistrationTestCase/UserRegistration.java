@@ -70,6 +70,14 @@ public class UserRegistration {
 		return minNumericCaseResult;
 	}
 	
+	public static boolean minimunOneSpecialCaseValidation(String userInputMinSpecialCase)
+	{
+
+		Pattern minSpecialCaseRegExp=Pattern.compile("^(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!_%*#?&]{1})[a-zA-Z0-9@$!_%*#?&]{8,}$");
+		Matcher matchResult=minSpecialCaseRegExp.matcher(userInputMinSpecialCase);
+		boolean minOneSpecialCaseResult=matchResult.matches();
+		return minOneSpecialCaseResult;
+	}
 
 
 
