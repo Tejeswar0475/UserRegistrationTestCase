@@ -61,5 +61,17 @@ public class UserRegistration {
 		return minUpperCaseResult;
 	}
 	
+	public static boolean minimunOneNumericCaseValidation(String userInputMinNumericCase)
+	{
+
+		Pattern minNumericCaseRegExp=Pattern.compile("^(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{8,}$");
+		Matcher matchResult=minNumericCaseRegExp.matcher(userInputMinNumericCase);
+		boolean minNumericCaseResult=matchResult.matches();
+		return minNumericCaseResult;
+	}
+	
+
+
+
 }
 
