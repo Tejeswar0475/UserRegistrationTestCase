@@ -15,11 +15,18 @@ public class UserRegistrationTest {
 	}
 	
 	@Test
-	public void userRegistrationTest()
+	public void userFirstNameTest()
 	{
 		boolean firstNameResult=UserRegistration.firstNameValidation("Tejesh");		
 		assertEquals(true, firstNameResult);
 	}
+	@Test
+	public void userLastNameTest()
+	{
+		boolean lastNameResult=UserRegistration.LastNameValidation("Tejesh Vakka");		
+		assertEquals(true, lastNameResult);
+	}
+	
 
 	
 }
