@@ -39,4 +39,12 @@ public class UserRegistrationTest {
 		boolean mobileResult=UserRegistration.mobileFormatValidation("91 9030688719");		
 		assertEquals(true, mobileResult);
 	}
+	
+	@Test
+	public void userMinEightCharectersTest()
+	{
+
+		boolean minCharResult=UserRegistration.minimunCharectersValidation("dESKtop89");		
+		assertEquals(true, minCharResult);
+	}
 }

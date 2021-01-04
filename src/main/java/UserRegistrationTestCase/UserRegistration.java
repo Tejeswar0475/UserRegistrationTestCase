@@ -43,5 +43,14 @@ public class UserRegistration {
 		return mobileFormatResult;
 	}
 
+	public static boolean minimunCharectersValidation(String userInputminEightChar)
+	{
+
+		Pattern minCharRegExp=Pattern.compile("^[A-Za-z0-9]{8,}$");
+		Matcher matchResult=minCharRegExp.matcher(userInputminEightChar);
+		boolean minCharResult=matchResult.matches();
+		return minCharResult;
+	}
+	
 }
 
