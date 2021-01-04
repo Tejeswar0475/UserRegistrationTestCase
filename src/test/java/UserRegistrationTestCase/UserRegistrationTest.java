@@ -32,6 +32,12 @@ public class UserRegistrationTest {
 		boolean emailResult=UserRegistration.emailValidation("abc.xyz@bl.co.in");		
 		assertEquals(true, emailResult);
 	}
+	@Test
+	public void userMobileFormatTest()
+	{
+		boolean mobileFormatResult=UserRegistration.mobileFormatValidation("91 5452225636");		
+		assertEquals(true, mobileFormatResult);
+	}
 
 
 

@@ -34,5 +34,17 @@ public class UserRegistration {
 							
 		return emailResult1;
 	}
+	
+	public static boolean mobileFormatValidation(String userInputMobileFormat)
+	{
 		
+		Pattern mobileFormatRegExp1=Pattern.compile("^[0-9]{2}\\s[0-9]{10}");				
+		Matcher matchResult=mobileFormatRegExp1.matcher(userInputMobileFormat);	
+		boolean mobileFormatResult=matchResult.matches();
+							
+		return mobileFormatResult;
+	}
+		
+
+
 }
