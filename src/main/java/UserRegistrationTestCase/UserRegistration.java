@@ -52,5 +52,14 @@ public class UserRegistration {
 		return minCharResult;
 	}
 	
+	public static boolean minimunOneUpperCaseValidation(String userInputminUpperCase)
+	{
+
+		Pattern minUpperCaseRegExp=Pattern.compile("^[A-Za-z0-9]{8,}$");
+		Matcher matchResult=minUpperCaseRegExp.matcher(userInputminUpperCase);
+		boolean minUpperCaseResult=matchResult.matches();
+		return minUpperCaseResult;
+	}
+	
 }
 
