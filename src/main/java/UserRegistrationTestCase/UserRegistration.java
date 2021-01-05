@@ -79,7 +79,54 @@ public class UserRegistration {
 		return minOneSpecialCaseResult;
 	}
 
+	public boolean userEntryValidation(String userFirstName,String userLastName, String userEmailId, String userMobileNumber, String userPassword)
+	{
+		Pattern firstNameRegExp=Pattern.compile("(^[A-Z]{1})[a-z]{2,}");		
+		Pattern lastNameRegExp=Pattern.compile("([A-Z]{1}[a-z]{2,}(\\s{1}){0,}[A-Z]{1}[a-z]{2,})");
+		Pattern emailRegExp1=Pattern.compile("^([a-zA-Z0-9]+)([_+.-]{1}[a-z0-9]+)*@([A-Za-z0-9]+).([a-z]{2,4})((.[a-z]{2,3})?)$");
+		Pattern mobileFormatRegExp=Pattern.compile("^[0-9]{2}\\s[0-9]{10}");		
+		Pattern passwordRegExp=Pattern.compile("^(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!_%*#?&]{1})[a-zA-Z0-9@$!_%*#?&]{8,}$");
+		
+		Matcher firstNameResult=firstNameRegExp.matcher(userFirstName);
+		Matcher lastNameResult=lastNameRegExp.matcher(userLastName);
+		Matcher emailResult=emailRegExp1.matcher(userEmailId);
+		Matcher mobileResult=mobileFormatRegExp.matcher(userMobileNumber);
+		Matcher passwordResult=passwordRegExp.matcher(userPassword);
+		
+		boolean isFirstNameMatched=firstNameResult.matches();
+		boolean isLastNameMatched=lastNameResult.matches();
+		boolean isemailIdMatched=emailResult.matches();
+		boolean isMobileNumberMatched=mobileResult.matches();
+		boolean isPasswordMatched=passwordResult.matches();
+		
+		if(isFirstNameMatched)
+		{
+			if(isLastNameMatched)
+			{
+				if(isemailIdMatched)
+				{
+					if(isMobileNumberMatched)
+					{
+						if(isPasswordMatched)
+						{
+							System.out.println("Happy");
+							return true;
+							
+						}
+					}
+				}
+			}
+		}
+		else
+		{
+			System.out.println("Sad");
+		}
+		
+		return false;		
+	}
 
-
+	
+	
+	
 }
 

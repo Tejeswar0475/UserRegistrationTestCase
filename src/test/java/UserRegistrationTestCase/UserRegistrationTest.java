@@ -2,6 +2,8 @@ package UserRegistrationTestCase;
 
 import static org.junit.Assert.*;
 
+import java.util.Scanner;
+
 import org.junit.Test;
 
 public class UserRegistrationTest {
@@ -71,6 +73,36 @@ public class UserRegistrationTest {
 		boolean minOneSpecialCaseResult=UserRegistration.minimunOneSpecialCaseValidation("Desktop@#12789");		
 		assertEquals(true, minOneSpecialCaseResult);
 	}
-
 	
+	
+	@Test
+	public void userEntryValidationTest()
+	{
+		
+		UserRegistration userRegistration=new UserRegistration();
+		Scanner scanner=new Scanner(System.in);
+		System.out.println("Enter first name:");
+		String firstName=scanner.nextLine();
+		
+		Scanner scanner1=new Scanner(System.in);
+		System.out.println("Enter Last name:");
+		String lastName=scanner1.nextLine();
+		
+		Scanner scanner2=new Scanner(System.in);
+		System.out.println("Enter Email");
+		String emailId=scanner2.nextLine();
+		
+		Scanner scanner3=new Scanner(System.in);
+		System.out.println("Enter Mobile Number:");
+		String mobileNumber=scanner3.nextLine();
+		
+		Scanner scanner4=new Scanner(System.in);
+		System.out.println("Enter Password:");
+		String password=scanner4.nextLine();
+		boolean userValidation=userRegistration.userEntryValidation(firstName,lastName,emailId,mobileNumber,password);
+				
+		assertEquals(true, userValidation);
+				
+	}
+
 }
