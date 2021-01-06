@@ -99,10 +99,7 @@ public class UserRegistrationTest {
 		Scanner scanner4=new Scanner(System.in);
 		System.out.println("Enter Password:");
 		String password=scanner4.nextLine();
-		boolean userValidation=userRegistration.userEntryValidation(firstName,lastName,emailId,mobileNumber,password);
-				
-		assertEquals(true, userValidation);
-				
-	}
-
+		boolean userValidation=userRegistration.userEntryValidation(firstName,lastName,emailId,mobileNumber,password);				
+		assertEquals(true, userValidation);			
+	}	
 }
