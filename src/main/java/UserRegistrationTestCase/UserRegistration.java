@@ -79,7 +79,7 @@ public class UserRegistration {
 		return minOneSpecialCaseResult;
 	}
 
-	public boolean userEntryValidation(String userFirstName,String userLastName, String userEmailId, String userMobileNumber, String userPassword)
+	public String userEntryValidation(String userFirstName,String userLastName, String userEmailId, String userMobileNumber, String userPassword)
 	{
 		Pattern firstNameRegExp=Pattern.compile("(^[A-Z]{1})[a-z]{2,}");		
 		Pattern lastNameRegExp=Pattern.compile("([A-Z]{1}[a-z]{2,}(\\s{1}){0,}[A-Z]{1}[a-z]{2,})");
@@ -109,8 +109,8 @@ public class UserRegistration {
 					{
 						if(isPasswordMatched)
 						{
-							System.out.println("Happy");
-							return true;
+							System.out.println("happy");
+							return "happy";
 							
 						}
 					}
@@ -119,14 +119,10 @@ public class UserRegistration {
 		}
 		else
 		{
-			System.out.println("Sad");
+			System.out.println("sad");
 		}
 		
-		return false;		
+		return "sad";		
 	}
 
-	
-	
-	
 }
-
